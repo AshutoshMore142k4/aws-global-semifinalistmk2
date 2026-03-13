@@ -1,0 +1,264 @@
+[
+  {
+    "name": "devmind_scan",
+    "description": "Scans the codebase to generate an up-to-date structural overview and architecture summary. Use this when you need to understand the project structure or find specific files.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "The root path to scan (default: current directory)"
+        }
+      }
+    }
+  },
+  {
+    "name": "devmind_analyze",
+    "description": "Analyzes the codebase for database table usage. Returns a report mapping tables to files and identifying unused tables. Use this before modifying the database schema.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "The root path to analyze (default: current directory)"
+        }
+      }
+    }
+  },
+  {
+    "name": "devmind_status",
+    "description": "Checks context freshness and returns a recommended next command when generated context is stale or missing.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "type": "string",
+          "description": "Context output directory (default: .devmind)"
+        },
+        "path": {
+          "type": "string",
+          "description": "Root path for source freshness checks (default: current directory)"
+        }
+      }
+    }
+  },
+  {
+    "name": "devmind_audit",
+    "description": "Audits codebase coverage against recorded learnings in memory/LEARN.md and writes an audit report.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "type": "string",
+          "description": "Context output directory (default: .devmind)"
+        },
+        "path": {
+          "type": "string",
+          "description": "Root path to audit (default: current directory)"
+        }
+      }
+    }
+  },
+  {
+    "name": "devmind_extract",
+    "description": "Extracts learning candidates from analysis artifacts and source comments, with optional apply to LEARN.md.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "type": "string",
+          "description": "Context output directory (default: .devmind)"
+        },
+        "path": {
+          "type": "string",
+          "description": "Root path to scan for comments (default: current directory)"
+        },
+        "apply": {
+          "type": "boolean",
+          "description": "Append extracted learning candidates into memory/LEARN.md"
+        }
+      }
+    }
+  },
+  {
+    "name": "devmind_autosave",
+    "description": "Persists crash-safe session journal/context, decision+hypothesis state, refactor ledger entries, and auto-applies extracted learnings.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "type": "string",
+          "description": "Context output directory (default: .devmind)"
+        },
+        "path": {
+          "type": "string",
+          "description": "Root path for extraction (default: current directory)"
+        },
+        "source": {
+          "type": "string",
+          "description": "Autosave source label (e.g., task-end, scan, generate)"
+        },
+        "note": {
+          "type": "string",
+          "description": "Optional note attached to journal/context state"
+        },
+        "decision": {
+          "type": "string",
+          "description": "Optional decision text to append into context decision log"
+        },
+        "hypothesis": {
+          "type": "string",
+          "description": "Optional hypothesis text to append into context hypothesis log"
+        },
+        "hypothesis_status": {
+          "type": "string",
+          "description": "Optional hypothesis status (open, ruled-out, confirmed)"
+        },
+        "goal": {
+          "type": "string",
+          "description": "Optional refactor/rewrite goal to append into refactor ledger"
+        },
+        "non_negotiable": {
+          "type": "string",
+          "description": "Optional non-negotiable invariant to append into refactor ledger"
+        },
+        "open_question": {
+          "type": "string",
+          "description": "Optional unresolved question to append into refactor ledger"
+        },
+        "failure": {
+          "type": "string",
+          "description": "Optional encountered failure mode to append into refactor ledger"
+        },
+        "resolution": {
+          "type": "string",
+          "description": "Optional resolution to append into refactor ledger"
+        }
+      }
+    }
+  },
+  {
+    "name": "devmind_retrieve",
+    "description": "Performs deterministic retrieval using contract docs, routed summaries, AGENTS sections, and escalation levels.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Retrieval query"
+        },
+        "output": {
+          "type": "string",
+          "description": "Context output directory (default: .devmind)"
+        },
+        "type": {
+          "type": "string",
+          "description": "Optional section type filter"
+        },
+        "tags": {
+          "type": "string",
+          "description": "Optional comma-separated tags filter"
+        },
+        "route": {
+          "type": "string",
+          "description": "Optional comma-separated routed context targets (auth,db,ui)"
+        },
+        "level": {
+          "type": "number",
+          "description": "Optional escalation level override (1,2,3)"
+        },
+        "state": {
+          "type": "boolean",
+          "description": "Include decision/hypothesis state logs when available"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max sections to return (default: 6)"
+        },
+        "max_words": {
+          "type": "number",
+          "description": "Approximate max words in output (default: 1400)"
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "devmind_design_system",
+    "description": "Initializes or reads the design system profile used to keep UI code aligned with component/token policies.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "output": {
+          "type": "string",
+          "description": "Context output directory (default: .devmind)"
+        },
+        "init": {
+          "type": "boolean",
+          "description": "Create default profile file if missing"
+        },
+        "force": {
+          "type": "boolean",
+          "description": "Overwrite profile when used with init"
+        }
+      }
+    }
+  },
+  {
+    "name": "devmind_learn",
+    "description": "Saves a new technical learning, pattern, or architectural decision to the project's persistent memory (LEARN.md). Use this when you discover something important that future agents should know.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "learning": {
+          "type": "string",
+          "description": "The knowledge to save (concise, actionable)"
+        },
+        "category": {
+          "type": "string",
+          "description": "Category of learning (e.g., architecture, database, testing, performance)"
+        }
+      },
+      "required": [
+        "learning"
+      ]
+    }
+  },
+  {
+    "name": "devmind_context",
+    "description": "Retrieves focused context for a specific directory or module. Use this to inspect file structure and exports without reading the entire codebase.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "focus": {
+          "type": "string",
+          "description": "Path to focus on (e.g., 'src/database')"
+        },
+        "query": {
+          "type": "string",
+          "description": "Keyword search query (optional)"
+        }
+      }
+    }
+  },
+  {
+    "name": "devmind_history",
+    "description": "Retrieves the project's evolution history (database changes, codebase growth). Use this to understand what has changed recently.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "unified",
+            "schema",
+            "codebase"
+          ],
+          "description": "Type of history to view (default: unified)"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,158 @@
+{
+  "timestamp": "2026-03-13T12:54:51.718Z",
+  "version": "1.1.0",
+  "contexts": {
+    "agents": "AGENTS.md",
+    "schema": "database/schema-overview.md",
+    "codebase": "codebase/codebase-overview.md",
+    "architecture": "codebase/architecture.md",
+    "designSystem": "design-system.json",
+    "retrieval": "context",
+    "learnings": "memory/LEARN.md"
+  },
+  "metadata": {
+    "hasDatabase": false,
+    "hasCodebase": true,
+    "hasDesignSystem": false
+  },
+  "sections": [
+    {
+      "id": "architecture.overview",
+      "title": "Architecture",
+      "type": "architecture",
+      "tags": [
+        "architecture",
+        "layers",
+        "patterns"
+      ],
+      "priority": "high",
+      "source": "codebase/architecture.md",
+      "startLine": 6,
+      "endLine": 51,
+      "contentHash": "2ba8da53049a97af"
+    },
+    {
+      "id": "database.schema",
+      "title": "Database Schema",
+      "type": "database",
+      "tags": [
+        "database",
+        "schema",
+        "tables"
+      ],
+      "priority": "high",
+      "source": "database/schema-overview.md",
+      "startLine": 55,
+      "endLine": 56,
+      "contentHash": "9347e54baa2a6962"
+    },
+    {
+      "id": "business.logic",
+      "title": "Business Logic",
+      "type": "business-logic",
+      "tags": [
+        "business",
+        "rules",
+        "domain"
+      ],
+      "priority": "medium",
+      "source": "database/BUSINESS_LOGIC.md",
+      "startLine": 60,
+      "endLine": 61,
+      "contentHash": "75348e335e3dc654"
+    },
+    {
+      "id": "codebase.overview",
+      "title": "Codebase Overview",
+      "type": "codebase",
+      "tags": [
+        "codebase",
+        "modules",
+        "entrypoints"
+      ],
+      "priority": "high",
+      "source": "codebase/codebase-overview.md",
+      "startLine": 65,
+      "endLine": 137,
+      "contentHash": "cb779ee53b14455f"
+    },
+    {
+      "id": "memory.learnings",
+      "title": "Project Learnings",
+      "type": "memory",
+      "tags": [
+        "memory",
+        "learnings",
+        "decisions"
+      ],
+      "priority": "medium",
+      "source": "memory/LEARN.md",
+      "startLine": 141,
+      "endLine": 1520,
+      "contentHash": "63a3b895a9919422"
+    },
+    {
+      "id": "ui.design-system",
+      "title": "Design System",
+      "type": "design-system",
+      "tags": [
+        "ui",
+        "design-system",
+        "components",
+        "tokens"
+      ],
+      "priority": "high",
+      "source": "design-system.json",
+      "startLine": 1524,
+      "endLine": 1525,
+      "contentHash": "388a951077d280df"
+    },
+    {
+      "id": "agent.capabilities",
+      "title": "Agent Capabilities",
+      "type": "capabilities",
+      "tags": [
+        "tools",
+        "capabilities",
+        "commands"
+      ],
+      "priority": "medium",
+      "source": "devmind-tools.json",
+      "startLine": 1529,
+      "endLine": 1568,
+      "contentHash": "543c256b74e3bb8f"
+    },
+    {
+      "id": "context.retrieval",
+      "title": "Context Retrieval Contract",
+      "type": "retrieval",
+      "tags": [
+        "context",
+        "retrieval",
+        "routing",
+        "escalation"
+      ],
+      "priority": "high",
+      "source": "AGENTS.md",
+      "startLine": 1572,
+      "endLine": 1595,
+      "contentHash": "f81006b7bc500655"
+    },
+    {
+      "id": "agent.runbook",
+      "title": "Instructions",
+      "type": "runbook",
+      "tags": [
+        "runbook",
+        "workflow",
+        "status",
+        "autosave"
+      ],
+      "priority": "high",
+      "source": "AGENTS.md",
+      "startLine": 1599,
+      "endLine": 1623,
+      "contentHash": "6dde63901b6b3787"
+    }
+  ]
+}

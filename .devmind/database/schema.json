@@ -1,0 +1,5 @@
+{
+  "tables": [],
+  "databaseType": "sqlite",
+  "source": ".devmind/database.sqlite"
+}

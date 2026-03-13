@@ -1,0 +1,6 @@
+{
+  "databaseUrl": "",
+  "outputDir": ".devmind",
+  "schema": "public",
+  "format": "markdown"
+}
